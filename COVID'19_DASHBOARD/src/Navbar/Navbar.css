@@ -1,0 +1,29 @@
+
+.navigation{
+    display: flex;
+     align-items: center; 
+     margin:0px 10px;
+     align-self: center;
+     /* justify-content:space-around; */
+     /* align-items: center; */
+    /* justify-content:space-between;  */
+    
+}
+nav a{
+    /* text-align: center; */
+    padding:0px 18px;
+    text-decoration: none;
+    color:#646979;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2:first-child{
+    color:#eb4641;
+}
+
+nav {
+   /* align-items: center; */
+   margin-left:25%;
+
+}

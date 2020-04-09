@@ -1,0 +1,18 @@
+body{
+  background-color: white;
+}
+
+.full-content{
+border:1px solid #ccc;
+background-color: #e9e9ec;
+}
+
+/* *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+/* .App {
+  text-align: center;
+} */
+
