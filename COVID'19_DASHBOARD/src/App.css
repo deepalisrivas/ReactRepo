@@ -6,7 +6,9 @@ body{
 border:1px solid #ccc;
 background-color: #e9e9ec;
 }
-
+.section2{
+  display: flex;
+}
 /* *{
   box-sizing: border-box;
   margin: 0;

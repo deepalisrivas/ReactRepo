@@ -73,7 +73,7 @@ class CountrySection extends Component{
             // }
             
             
-            console.log(response.data);
+            // console.log(response.data);
         })
     }
 
