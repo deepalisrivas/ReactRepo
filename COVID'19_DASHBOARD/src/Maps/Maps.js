@@ -1,8 +1,9 @@
 import React ,{Component} from 'react';
 import './Maps.css';
-
+import $ from 'jquery';
 import axios from 'axios';
 import { VectorMap } from "react-jvectormap";
+
 
 
 class Maps extends Component{
@@ -21,24 +22,7 @@ class Maps extends Component{
 
 componentDidMount(){
     axios.get('https://corona.lmao.ninja/countries?sort=country')
-    $(function(){
-            $('.map1').vectorMap({
-             map: 'world_mill',
-             series: {
-                //this is the object for passing country/region data into
-                regions: [{
-                  //define the range of color values
-                  scale: ['#DEEBF7', '#08519C'],
-                  //define the function that maps data to color range
-                  normalizeFunction: 'linear',
-                  //define the coloration method
-                  attribute: 'fill',
-                  //define the array of country data
-                  values: this.state.most_affected
-                }]
-              },
-             });
-           })
+   
     .then(response => {
         // console.log(response.data );
         let most_affected1 = [];
@@ -74,12 +58,32 @@ componentDidMount(){
         // })
         }
         console.log(this.state.most_affected)
-        console.log(this.state.less_affected)
+        // console.log(this.state.less_affected)
         // const {id ,cases} = response.data
-       
         // console.log(id,cases)
+        var cdata = {"US": "35", "NO": "15", "SE": "17", "GB": "20", "ES": "10"}
+        $(function(){
+        $('.map1').vectorMap({
+         map: 'world_mill',
+         series: {
+            //this is the object for passing country/region data into
+            regions: [{
+              //define the range of color values
+              scale: ['#DEEBF7', '#08519C'],
+              //define the function that maps data to color range
+              normalizeFunction: 'linear',
+              //define the coloration method
+              attribute: 'fill',
+              //define the array of country data
+              values: cdata
+            }]
+          },
+         });
+       })
     })
     //
+    
+    
     }
 
     
@@ -103,7 +107,7 @@ componentDidMount(){
             <div className="Map-area">
             
             <VectorMap map={'world_mill'}
-            backgroundColor= "#fbf321"
+            backgroundColor="pink"
             
             ref="map"
             containerStyle={{

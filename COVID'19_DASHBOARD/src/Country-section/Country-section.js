@@ -80,7 +80,11 @@ class CountrySection extends Component{
    
     render(){
         return (
+            
                 <div className="content">
+                
+                <div class="scrollbar" id="style-3">
+    
                      <div className="country-block"><div className="sub-country-block"><img src={usa} className="flags" alt="USA"/><h5>United States</h5><div className="arrow"><img src={up} alt="danger"/></div></div>
                      <div className="country-data">{this.state.USA.cases} Affected {this.state.USA.recovered} Recovered</div>
                      </div>
@@ -113,6 +117,7 @@ class CountrySection extends Component{
                      </div>
                 
                      
+                     </div>
                 </div>
         )
     }
