@@ -1,0 +1,58 @@
+ /* .backdropStyle  {
+    position: 'fixed';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: 'rgba(0,0,0,0.3)';
+    padding: 50;
+  };
+
+  /* // The modal "window" */
+  /* .modalStyle {
+    background-Color: '#000';
+    border-Radius: 5;
+    max-Width: 500;
+    min-Height: 300;
+    margin: '0 auto';
+    padding: 30;
+  };
+  .btn1{
+      color:red;
+  } */ 
+
+  .Symptoms-content{
+      color:black;
+      /* font-weight: bold; */
+      font-size: 1.2em;
+      text-align: center;
+  }
+
+  .Symptoms-list ul li{
+      list-style-type: disc;
+      color:red;
+      
+      font-weight: bold;
+  }
+
+  .Symptoms-list ul{
+      line-height: 2em;
+  }
+  h2{
+      text-align: center;
+  }
+  .footer{
+      text-align: center;
+  }
+  .btn-close{
+      border:none;
+      background-color: white;
+      padding:8px;
+      color: #52586a;
+     font-size: 1.2em;
+     cursor:pointer;
+  }
+  .btn-close:hover{
+      font-weight:bold ;
+      color:black;
+  }

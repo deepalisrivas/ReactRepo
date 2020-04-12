@@ -7,3 +7,28 @@
     background-color: white;
     display: flex;
 }
+.h4{
+    color:#ff0019;
+    border:solid 1px #ffeaeb;
+    border-radius: 8px;
+    background-color: #ffeaeb;
+    padding:8px;
+    width: 130px;
+    /* height: 36px; */
+    /* text-align: center; */
+}
+h3{
+    line-height: 1.5em;
+}
+.btn-arrow{
+    border:none;
+    background-color: white;
+    cursor: pointer;
+}
+.img-illustrate{
+    margin-top:25px;
+}
+span{
+    color:#ff0019;
+    font-weight: bold;
+}
