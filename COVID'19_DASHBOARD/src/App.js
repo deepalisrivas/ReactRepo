@@ -1,46 +1,32 @@
 import React, { Component } from 'react';
-
-import Home from './Home/Home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Main_page from './Main_page/Main_page';
 import Navbar from './Navbar/Navbar';
 import './App.css';
-import CountrySection from './Country-section/Country-section';
-import Maps from './Maps/Maps';
-import Charts from './Charts/Charts';
-import News from './News&Updates/News&updates'
-import Recovery from './Charts/Recovery-chart';
+
+// import Line from './Charts/Line-chart';
+import Faq from './FAQ/Faq';
+import Helpful from './HELPFUL_LINKS/Helpful_links'
+
 
 
 class App extends Component {
   
+
+  
   render() {
     return (
+      <Router> 
       <div className="App">
+      
           <Navbar />
-
-      <div className="section-wrapper">
-      <div className="horizontal-section">
-            <Home />
-      
-       <div className="section2">
-           <CountrySection/>
-            <Maps/>
-       </div>
-
-       <div className="section3">
-            <Charts />
-            <News/>
-       </div>
-
+          <Route path="/" exact component={Main_page}/>
+          <Route path="/FAQ" component={Faq}/>
+          <Route path="/HELPFUL_LINKS" component={Helpful}/>
+    
       </div>
-
-      <div className="vertical-section">
-            <Recovery/>
-      </div>
+      </Router> 
       
-      </div>
-      
-      
-      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './News&updates.css';
-import illustrator from '../../assets/Illustration.svg';
-import arrow from '../../assets/Arrow.svg';
+import illustrator from '../../../assets/Illustration.svg';
+import arrow from '../../../assets/Arrow.svg';
 
 class News extends Component{
 

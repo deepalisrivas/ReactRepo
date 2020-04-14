@@ -57,7 +57,7 @@ componentDidMount(){
         //     less_affected : less_affected1
         // })
         }
-        console.log(this.state.most_affected)
+        
         // console.log(this.state.less_affected)
         // const {id ,cases} = response.data
         // console.log(id,cases)
@@ -83,7 +83,7 @@ componentDidMount(){
     })
     //
     
-    
+    console.log(this.state.most_affected)
     }
 
     

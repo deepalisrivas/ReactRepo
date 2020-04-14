@@ -1,17 +1,17 @@
 import React ,{Component} from 'react';
 import  './Country-section.css';
 import axios from 'axios';
-import usa from '../../assets/usa.svg';
-import uk from '../../assets/uk.svg';
-import italy from '../../assets/italy.svg';
-import germany from '../../assets/germany.svg';
-import china from '../../assets/china.svg';
-import turkey from '../../assets/turkey.svg';
-import india from '../../assets/india.svg';
-import iran from '../../assets/iran.svg';
-import switzerland from '../../assets/switzerland.svg';
-import spain from '../../assets/spain.svg';
-import up from '../../assets/Up.svg';
+import usa from '../../../assets/usa.svg';
+import uk from '../../../assets/uk.svg';
+import italy from '../../../assets/italy.svg';
+import germany from '../../../assets/germany.svg';
+import china from '../../../assets/china.svg';
+import turkey from '../../../assets/turkey.svg';
+import india from '../../../assets/india.svg';
+import iran from '../../../assets/iran.svg';
+import switzerland from '../../../assets/switzerland.svg';
+import spain from '../../../assets/spain.svg';
+import up from '../../../assets/Up.svg';
 
 
 class CountrySection extends Component{
@@ -83,7 +83,7 @@ class CountrySection extends Component{
             
                 <div className="content">
                 
-                <div class="scrollbar" id="style-3">
+                <div className="scrollbar" id="style-3">
     
                      <div className="country-block"><div className="sub-country-block"><img src={usa} className="flags" alt="USA"/><h5>United States</h5><div className="arrow"><img src={up} alt="danger"/></div></div>
                      <div className="country-data">{this.state.USA.cases} Affected {this.state.USA.recovered} Recovered</div>

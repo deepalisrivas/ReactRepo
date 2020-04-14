@@ -1,0 +1,26 @@
+.horizontal-section{
+    /* border:1px solid #ccc; */
+    background-color: #e9e9ec;
+    width:80%;
+    }
+    .section2{
+      display: flex;
+    
+    }
+    .section3{
+      display: flex;
+      
+    }
+    
+    .vertical-section{
+      width:20%;
+      background-color: #e9e9ec;
+      
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* justify-content: space-evenly; */
+    }
+    .section-wrapper{
+      display: flex;
+    }
+    
