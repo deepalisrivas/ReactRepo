@@ -1,0 +1,25 @@
+.wrapper{
+    /* width:33%; */
+    /* height:30%; */
+    width:50%;
+    margin:10px;
+    padding:0px 8px;
+    border:1px solid white;
+    border-radius: 5%;
+    background-color: white;
+}
+
+.charts-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.btn{
+    border:1px solid  #e9e9ec;
+    border-radius: 5%;
+    padding:10px;
+    background-color: #e9e9ec;
+    
+}
