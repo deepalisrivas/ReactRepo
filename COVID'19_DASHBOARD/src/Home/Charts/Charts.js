@@ -1,125 +1,61 @@
 import React , {Component} from 'react';
 import './Charts.css';
 import Line from './Line-chart';
+import Line2 from './Line-chart2';
+import Line3 from './Line-chart3';
 import axios from 'axios'
-import LineChart from 'react-linechart';
-// import '../node_modules/react-linechart/dist/styles.css';
 
-// import { useParams } from 'react-router-dom';
+
+
 
  class Charts extends Component{
 
-    
-      
-
-    
-    //   render() {
-    //     return (
-    //       <div className="App">
-    //         <div className="header">react svg line chart [part 1]</div>
-    //         <LineChart data={this.createFakeData()} />
-    //         <LineChart data={this.createFakeData()} color={'#F44336'}  />
-    //       </div>
-    //     );
-    //   }
-
-     state = {
-        Cases : {
-            date : [],
-            recovered : []
-        }
-     }
+    constructor(props){
+    super(props)
+    this.state = {
+        
+        cases :[],
+        visible : false,
+        visible1: false,
+        visible2:false
+    }
+    }
 
     componentDidMount(){
         axios.get('https://api.covid19api.com/total/dayone/country/India')
        
         .then(response => {
             
-            let tempDate = [];
-            let tempRecovered =[];
-//             
-            for(var i = 0;i < response.data.length; i++){
-//                
-           tempDate.push(response.data[i].Date);
-                tempRecovered.push(response.data[i].Confirmed);
-//             // console.log(tempData);
-//             //  tempData = Object.values(tempDate);
-            // tempDate.push({date : response.data[i].Date, recovered : response.data[i].Confirmed})
-
-            // this.setState({Cases : tempDate})
-            // this.state.data.push({date : response.data[i].Date, recovered : response.data[i].Confirmed})
-            this.setState({Cases:{
-                            date:tempDate,
-                            recovered:tempRecovered}
-                         })
-                    // console.log(this.state);
-                }
+            
+                const cases = response.data;
+               
+                this.setState({cases})
                 // console.log(this.state.Cases.recovered)
+                
  
             })
         }
-//     
+   
         render() {
-console.log(this.state.Cases.recovered)  
-
-
-
-            const data = [
-                {									
-                    color: "red", 
-                    points: [{x: 1, y: 2}, {x: 3, y: 5}, {x: 7, y: -3}]
-                    // points : [{x:1 , y:this.state.Cases.recovered[0]},
-                    // {x:2 , y:this.state.Cases.recovered[1]},
-                    //     {x:3 , y:this.state.Cases.recovered[2]},
-                    //         {x:4 , y:this.state.Cases.recovered[3]}
-                    //             ]
-                }
-
-            ];
-            
-        // console.log(data)
-            // console.log(this.state.Cases.recovered[0])
-             
-            //         // points :this.state.Cases
-            //         points : [{x:1 , y:this.state.Cases.recovered[0]},
-            //         {x:2 , y:this.state.Cases.recovered[1]},
-            //             {x:3 , y:this.state.Cases.recovered[2]},
-            //                 {x:4 , y:this.state.Cases.recovered[3]}
-            //                     ]
-
-       
-    
+          
 
         return(
             <div className="wrapper">
                 <div className="charts-heading">
                     <h3>Spread Trends</h3>
                     <div className="button-area">
-                        <button className="btn">Confirmed</button>
-                        <button className="btn">Recovered</button>
-                        <button className="btn">Deceased</button>
+                        <button className="btn" onClick={()=>{this.setState({visible:true,visible1:false,visible2:false})}}>Confirmed</button>
+                        <button className="btn" onClick={()=>{this.setState({visible1:true,visible:false,visible2:false})}}>Recovered</button>
+                        <button className="btn" onClick={()=>{this.setState({visible2:true,visible:false,visible1:false})}}>Deceased</button>
                     </div>
                 </div>
                 <div>
-                   
-                    {/*<Line data={this.createFakeData()}/>*/}
-                    
+                               
                       <div>
-                      <LineChart 
-                            width={400}
-                            height={300}
-                            data={data}
-                             />
-                       {/*{this.state.data.map(postItem => (
-                        <div key={postItem.id}>
-                            <h1>{postItem.title}</h1>
-                        </div>
-                        ))}<div key={postItem.date}>
-                        <h1>{postItem.recovered}</h1>
-                        </div>
-                       )}*/}
-                       
-                        
+
+                      {this.state.visible? <Line data={this.state.cases}/> : null}
+                      {this.state.visible1? <Line2 data={this.state.cases}/> : null}
+                      {this.state.visible2? <Line3 data={this.state.cases}/> : null}
                         </div>
                        
                     

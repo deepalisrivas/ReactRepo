@@ -1,48 +1,38 @@
-import React ,  {Component} from 'react';
-import axios from 'axios';
-// import './Line-chart.css';
 
-// class Line extends Component {
-    // state = {
-    //     data : [],
-    //     // recovered : []
-    // }
+import React from 'react';
+import {XYPlot, XAxis, YAxis,LineSeries} from 'react-vis';
 
+import "./style.css";
 
-    // componentDidMount(){
-    //     axios.get('https://api.covid19api.com/total/dayone/country/India')
-    //     .then(response => {
+const Line = (props) => {
 
-    //             function createFakeData(){ 
-
-    //         let tempDate = [];
-    //         let tempRecovered = []
-
-    //         for(var i = 0;i < response.data.length; i++){
-    //             const x = response.data[i].Date;
-    //             const y = response.data[i].Confirmed
-               
-    //         data.push({x,y})
-    //         // tempRecovered.push()
-    //         // const data = response.data[i].Date
-    //         // this.setState({data:tempDate})
-    //         // this.setState({recovered:tempRecovered})
-    //         }
-        
-    //         // console.log(this.state.data)
-    //         return data;
-    //     }
-    //     })
-        
-    // }
-    // 
-    class Line extends Component {
-      render(){
-        return(
-          <div></div>
-          )
-      }
-     
     
-    }
+    const confirmed = props.data.map((item)=>{  
+      return   {x: (new Date(item.Date).toDateString()),
+          y: item.Confirmed}
+      });
+    return (
+      
+        <XYPlot yDomain={[0,10000]}
+            xType="ordinal"
+            width={500}
+            height={200}>
+            
+           
+            <XAxis title="Date"/>
+            <YAxis title="Confirmed" />
+                <LineSeries 
+                curve={'curveMonotoneX'}
+
+                    data={confirmed}
+                    style={{stroke: 'red', strokeWidth: 2}}/>
+                   
+
+        </XYPlot>
+        
+        
+       
+    );
+}
+
 export default Line;

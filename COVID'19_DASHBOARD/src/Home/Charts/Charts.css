@@ -1,6 +1,6 @@
 .wrapper{
     /* width:33%; */
-    /* height:30%; */
+    /* height:100%; */
     width:50%;
     margin:10px;
     padding:0px 8px;
@@ -18,8 +18,13 @@
 
 .btn{
     border:1px solid  #e9e9ec;
-    border-radius: 5%;
+    border-radius: 10%;
     padding:10px;
     background-color: #e9e9ec;
     
+}
+.btn:focus{
+    color:white;
+    background:rgb(71, 69, 69);
+
 }
