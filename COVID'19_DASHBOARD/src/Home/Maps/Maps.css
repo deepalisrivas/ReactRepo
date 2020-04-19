@@ -1,4 +1,4 @@
-.Wrapper{
+.Wrapper-map{
     width:80%;
     margin:10px;
     padding:0px 10px;
@@ -47,10 +47,19 @@ margin-left:-20px;
     width:80%;
 } */
 .Map-area{
-    background-color: pink;
+    /* background-color: pink; */
     width:100%;
-    height:75%;
+    /* max-height:75%;  */
     
-    border-radius: 5%;
-    /* margin-top:20px; */
+    /* border-radius: 5%;  */
+     /* margin-top:20px; */
+}
+
+@media (max-width:425px){
+.Wrapper-map{
+    width:90vw;
+
+}
+
+
 }

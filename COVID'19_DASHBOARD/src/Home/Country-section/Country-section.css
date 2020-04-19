@@ -1,6 +1,6 @@
 .content{
     width:40%;
-     height:300px;
+     height:400px;
     background-color: white;
     margin:10px;
     padding:0px 10px;
@@ -15,7 +15,7 @@
 .country-block{
     box-shadow: 3px 4px 4px rgb(231, 231, 231) ;
     border-radius: 4px;
-   
+    /* height:300px; */
     /* display: flex; */
 }
 .sub-country-block{
@@ -42,18 +42,11 @@ h5{
     float: left;
     /* display: flex; */
 	width:100%;
-     height:300px;
+     height:400px;
 	background: white;
     overflow-y: scroll;
-    /* border-radius: 5%; */
-	/* margin-bottom: 25px; */
+   
 }
-
-/* .force-overflow
-{
-	min-height: 450px;
-} */
-
 
 #style-3::-webkit-scrollbar
 {
@@ -67,7 +60,7 @@ h5{
 }
 .searchbar{
    
-    padding:8px;
+    padding:12px;
     margin: 8px 0px 0px 0px;
     width:90%;
     background-color:#ebedf3 ;
@@ -77,4 +70,18 @@ h5{
 .searchbar::placeholder{
     padding:2px;
     color:black;
+    font-size: 1.2em;
+}
+
+
+
+@media(max-width:425px){
+.content{
+    width:90vw;
+    
+}
+
+
+
+
 }

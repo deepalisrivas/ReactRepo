@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {XYPlot, XAxis, YAxis,LineSeries} from 'react-vis';
+import {XYPlot, XAxis, YAxis,LineSeries,makeWidthFlexible} from 'react-vis';
 
 import "./style.css";
 
@@ -11,11 +11,15 @@ const Line = (props) => {
       return   {x: (new Date(item.Date).toDateString()),
           y: item.Confirmed}
       });
+
+      const FlexibleXYPlot = makeWidthFlexible(XYPlot);
+
+
     return (
-      
-        <XYPlot yDomain={[0,10000]}
+      <div style={{width:'100%'}}>
+        <FlexibleXYPlot yDomain={[0,10000]}
             xType="ordinal"
-            width={500}
+            
             height={200}>
             
            
@@ -28,9 +32,9 @@ const Line = (props) => {
                     style={{stroke: 'red', strokeWidth: 2}}/>
                    
 
-        </XYPlot>
-        
-        
+        </FlexibleXYPlot>
+        </div>
+       
        
     );
 }

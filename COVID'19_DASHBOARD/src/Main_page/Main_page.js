@@ -8,7 +8,7 @@ import News from '../Home/News&Updates/News&updates';
 import Recovery from '../Home/Charts/Recovery-chart';
 import Modal from '../Home/News&Updates/Modal/Modal'
 import TwitterFeed from '../Home/Twitter-feed/Twitter-feed';
-import Faq from '../FAQ/Faq';
+
 
 class Main_page extends Component {
     
@@ -26,25 +26,26 @@ class Main_page extends Component {
 render(){
     return(
         <div className="section-wrapper">
-<div className="horizontal-section">
-      <Home />
+          <div className="horizontal-section">
+          <div>
+              <Home />
+          </div>
+          <div className="section2">
+              <CountrySection/>
+              <Maps/>
+          </div>
 
- <div className="section2">
-     <CountrySection/>
-      <Maps/>
- </div>
+          <div className="section3">
+              <Charts />
+              <News func={this.toggleModal} />
+          </div>
 
- <div className="section3">
-      <Charts />
-      <News func={this.toggleModal} />
- </div>
+          </div>
 
-</div>
-
-<div className="vertical-section">
-      <Recovery/>
-      <TwitterFeed />
-</div>
+          <div className="vertical-section">
+              <Recovery/>
+              <TwitterFeed />
+          </div>
                 <Modal  
                 
                 show={this.state.isOpen}
@@ -52,7 +53,7 @@ render(){
                 
                 </Modal>
                 
-</div>
+        </div>
 
     )
 }

@@ -17,13 +17,15 @@ import Graph3 from '../../assets/Graph (3).svg';
     }
     
     componentDidMount() {
-        axios.get('https://corona.lmao.ninja/all')
-        .then(response => {
-            const Total_Cases = response.data;
-            this.setState({Total_Cases});
+        axios.get('https://api.covid19api.com/summary')
         
-            // console.log(response.data);
-            // setInterval(response.data,3000);
+        .then(response => {
+            // console.log(response.data)
+            const Total_Cases = response.data.Global;
+            this.setState({Total_Cases});
+        const Totalactive = (Total_Cases.TotalConfirmed-(Total_Cases.TotalRecovered+Total_Cases.TotalDeaths));
+            this.setState({Totalactive})
+            
         })
     }
    
@@ -31,13 +33,13 @@ import Graph3 from '../../assets/Graph (3).svg';
 render(){
     return(
        
-<div>
+
         
     <div className="HomeDiv">
         <div className="Home">
-            <div>
+            <div className="text_div">
                  <h4>Total Cases<img src={Up} alt="Danger"/></h4>
-                 <h2>{this.state.Total_Cases.cases}</h2>
+                 <h2>{this.state.Total_Cases.TotalConfirmed}</h2>
              </div>
              <div className="images">
                  <img src={Graph} alt="Graphical-Representation"/>
@@ -46,7 +48,7 @@ render(){
         <div className="Home">
              <div>
                 <h4>Recovered<img src={Down} alt="Relax"/></h4>
-                <h2>{this.state.Total_Cases.recovered}</h2>
+                <h2>{this.state.Total_Cases.TotalRecovered}</h2>
              </div>
              <div className="images">
                 <img src={Graph3} alt="Graphical-Representation"/>
@@ -55,7 +57,7 @@ render(){
         <div className="Home">
              <div>
                 <h4>Active Cases<img src={Up} alt="Danger"/></h4>
-                <h2>{this.state.Total_Cases.active}</h2>
+                <h2>{this.state.Totalactive}</h2>
             </div>
             <div className="images">
                 <img src={Graph1} alt="Graphical-Representation"/>
@@ -64,14 +66,14 @@ render(){
         <div className="Home">
             <div>
                 <h4>Total Deaths<img src={Up} alt="Danger"/></h4>
-                <h2>{this.state.Total_Cases.deaths}</h2>
+                <h2>{this.state.Total_Cases.TotalDeaths}</h2>
             </div>
             <div className="images">
                 <img src={Graph2} alt="Graphical-Representation"/>
             </div>
         </div>
     </div>
-</div>
+
 
     )
 }

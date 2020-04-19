@@ -1,6 +1,7 @@
 .wrapper-recovery{
-    /* width:0%; */
-    /* height:40%; */
+    /* width:17vw; */
+    /* height:40vh; */
+    /* position: relative; */
     margin:10px;
     padding:12px 8px;
     border:1px solid white;
@@ -12,7 +13,7 @@
     width:189px;
     height:189px;
     background-color: #f5f5f5;
-    /* position: absolute; */
+    position: relative;
     border-radius: 50%;
     /* top: 154px; */
     margin-left: 20px;
@@ -23,9 +24,9 @@
     width:103px;
     height:103px;
     background-color: white;
-    top: 165px;
-    left: 1164px;
-    /* z-index: 1; */
+    top: 40px;
+    left: 40px;
+    
     box-shadow: 0px 0px 22px #2FD0AA26;
     border-radius: 50%;
 }
@@ -49,4 +50,11 @@
     top:15px;
     left:17px;
 /* z-index: 1; */
+}
+
+@media(max-width:425px){
+.big-circle{
+    margin : 0 auto
+}
+
 }

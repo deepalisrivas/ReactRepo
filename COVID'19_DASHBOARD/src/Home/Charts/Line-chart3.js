@@ -1,5 +1,5 @@
 import React from 'react';
-import {XYPlot, XAxis, YAxis,LineSeries} from 'react-vis';
+import {XYPlot, XAxis, YAxis,LineSeries,makeWidthFlexible} from 'react-vis';
 
 import "./style.css";
 
@@ -9,10 +9,15 @@ const Line3 = (props) => {
         return   {x: (new Date(item.Date).toDateString()),
             y: item.Deaths}
         });
+
+        const FlexibleXYPlot = makeWidthFlexible(XYPlot);
+
+
     return(
-            <XYPlot yDomain={[0,10000]}
+        <div style={{width:'100%'}}>
+            <FlexibleXYPlot yDomain={[0,10000]}
             xType="ordinal"
-            width={500}
+            // width={500}
             height={200}>
             
             
@@ -20,11 +25,12 @@ const Line3 = (props) => {
             <YAxis title="Deceased" />
                 
                     <LineSeries 
-                    
+                    curve={'curveMonotoneX'}
                     data={deceased}
                     style={{stroke: 'red', strokeWidth: 2}}/>
 
-        </XYPlot>
+        </FlexibleXYPlot>
+        </div>
         )
 }
 export default Line3

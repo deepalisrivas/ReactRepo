@@ -28,3 +28,16 @@
     background:rgb(71, 69, 69);
 
 }
+
+/* .chart_div{
+    width:40%;
+} */
+
+@media(max-width:425px){
+
+.wrapper{
+    width:90vw;
+}
+
+
+}

@@ -15,7 +15,7 @@ import axios from 'axios'
     this.state = {
         
         cases :[],
-        visible : false,
+        visible : true,
         visible1: false,
         visible2:false
     }
@@ -30,7 +30,7 @@ import axios from 'axios'
                 const cases = response.data;
                
                 this.setState({cases})
-                // console.log(this.state.Cases.recovered)
+                // console.log(this.state.cases)
                 
  
             })
@@ -44,19 +44,19 @@ import axios from 'axios'
                 <div className="charts-heading">
                     <h3>Spread Trends</h3>
                     <div className="button-area">
-                        <button className="btn" onClick={()=>{this.setState({visible:true,visible1:false,visible2:false})}}>Confirmed</button>
+                        <button className="btn current" onClick={()=>{this.setState({visible:true,visible1:false,visible2:false})}}>Confirmed</button>
                         <button className="btn" onClick={()=>{this.setState({visible1:true,visible:false,visible2:false})}}>Recovered</button>
                         <button className="btn" onClick={()=>{this.setState({visible2:true,visible:false,visible1:false})}}>Deceased</button>
                     </div>
                 </div>
-                <div>
+                <div className="chart_div">
                                
-                      <div>
+                      
 
                       {this.state.visible? <Line data={this.state.cases}/> : null}
                       {this.state.visible1? <Line2 data={this.state.cases}/> : null}
                       {this.state.visible2? <Line3 data={this.state.cases}/> : null}
-                        </div>
+                       
                        
                     
                     

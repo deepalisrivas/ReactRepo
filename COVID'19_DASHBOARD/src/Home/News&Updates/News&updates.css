@@ -1,4 +1,4 @@
-.wrapper1{
+.wrapper-news{
     width:50%;
     margin:10px;
     padding:12px 8px;
@@ -31,4 +31,12 @@ h3{
 span{
     color:#ff0019;
     font-weight: bold;
+}
+
+@media(max-width:425px){
+.wrapper-news{
+    width:90vw;
+}
+
+
 }

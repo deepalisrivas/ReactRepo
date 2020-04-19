@@ -4,13 +4,9 @@
      align-items: center; 
      margin:0px 10px;
      align-self: center;
-     /* justify-content:space-around; */
-     /* align-items: center; */
-    /* justify-content:space-between;  */
-    
+     
 }
 nav a{
-    /* text-align: center; */
     padding:0px 18px;
     text-decoration: none;
     color:#646979;
@@ -23,7 +19,32 @@ h2:first-child{
 }
 
 nav {
-   /* align-items: center; */
    margin-left:25%;
-
 }
+ .active{
+color: red;
+border-bottom: solid 6px red;
+padding-bottom:18px;
+}
+
+
+
+
+ @media (max-width:425px){  /*Mobile Screen */
+ .navigation{
+     flex-direction: column; 
+ } 
+nav{
+    margin:0
+}
+.active{
+    padding-bottom: 10px;
+}
+nav a{
+    padding: 0 10px;
+}
+
+
+
+
+ }

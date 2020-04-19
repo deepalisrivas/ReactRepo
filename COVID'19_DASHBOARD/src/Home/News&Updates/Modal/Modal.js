@@ -15,7 +15,7 @@ class Modal extends Component {
         left: 0,
         right: 0,
         backgroundColor: 'rgba(0,0,0,0.3)',
-        padding: 50
+        padding: 30
       };
   
       // The modal "window"
@@ -23,7 +23,7 @@ class Modal extends Component {
         backgroundColor: '#fff',
         borderRadius: 5,
         maxWidth: 500,
-        minHeight: 300,
+        minHeight: 200,
         margin: '0 auto',
         padding: 30
       };
@@ -53,7 +53,7 @@ class Modal extends Component {
             </div>
   
             <div className="footer">
-              <button onClick={this.props.onClose} class="btn-close">
+              <button onClick={this.props.onClose} className="btn-close">
                 Close
               </button>
             </div>

@@ -14,14 +14,24 @@
 }
 
 .HomeDiv{
-    display: flex;
-    /* width:100%; */
-
-   
+    display: flex; 
 }
 
 .images{
     align-items: center;
 }
 
+
+@media (max-width:425px){
+     .HomeDiv{
+        /* width:100vw; */
+         display:flex;
+         flex-direction: column;
+         align-items: center;
+    } 
+    .Home{
+        width:50vw;
+    }  
+    
+}
 
